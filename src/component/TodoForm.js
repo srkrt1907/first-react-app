@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
+import { connect } from "react-redux";
 
+import { addTodo } from "../redux/modules/todo/todo.action";
 
 class TodoForm extends Component {
 
@@ -13,7 +15,7 @@ class TodoForm extends Component {
 
     handleSubmit = () => {
 
-        this.props.saveTodo(this.state)
+        this.props.addTodo(this.state)
 
     };
 
@@ -55,4 +57,9 @@ class TodoForm extends Component {
 }
 
 
-export default TodoForm;
+const mapDispatchToProps = {
+    addTodo
+}
+
+// null parameter degeri okumak icin 
+export default connect(null,mapDispatchToProps)(TodoForm);

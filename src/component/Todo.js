@@ -6,31 +6,19 @@ import TodoFetch from './TodoFetch'
 
 import {withRouter} from 'react-router-dom'
 
+
 class Todo extends Component {
-
-
-    state = {
-
+   /* state = {
         todos: []
-
     }
-
     saveTodo = todo => {
-
         this.setState(prevState => {
-
             return {
-
                 todos: [...prevState.todos, todo]
-
             }
-
          }
         )
-
-    }
-
-
+    }*/
 
     render() {
 
@@ -38,8 +26,8 @@ class Todo extends Component {
 
             <div>
 
-                <TodoForm saveTodo={this.saveTodo} />
-                <TodoList data={this.state.todos} />
+                <TodoForm  />
+                <TodoList />
 
 
                 <TodoFetch />
@@ -55,7 +43,8 @@ class Todo extends Component {
 
     }
 
-
 }
+
+
 // this.props.history.push('/user') history withrouter ile geliyor burdaki parametre ile kullanılıyor.
 export default withRouter(Todo);

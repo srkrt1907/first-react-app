@@ -5,12 +5,18 @@ import './App.css';
 import Todo from './component/Todo';
 import User from './component/User';
 
+import { Provider } from "react-redux";
+import store from "./redux/store";
+
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 
 
 function App() {
   return (
     <div className="App">
+
+    <Provider store={store}>
+
       <BrowserRouter>
         <Switch>
 
@@ -26,6 +32,8 @@ function App() {
 
         </Switch>
       </BrowserRouter>
+
+    </Provider>
     </div>
   );
 }

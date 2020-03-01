@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { connect } from "react-redux";
 
 
 class TodoList extends Component {
@@ -9,7 +10,7 @@ class TodoList extends Component {
 
             <ul>
 
-                {this.props.data.map(todo => {
+                {this.props.todos.map(todo => {
 
                     return <li className='list-group-item'>{todo.title}</li>
 
@@ -22,5 +23,12 @@ class TodoList extends Component {
     }
 }
 
+const mapStateToProps = store => {
 
-export default TodoList;
+    return {
+        todos : store.todo.todos
+    }
+
+};
+
+export default connect(mapStateToProps)(TodoList);

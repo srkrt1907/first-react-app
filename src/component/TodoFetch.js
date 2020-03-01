@@ -1,52 +1,50 @@
 
 import React, { Component } from 'react'
 
-class TodoFetch extends Component{
+class TodoFetch extends Component {
 
 
     state = {
-        isLoading :false,
-        todos : []
+        isLoading: false,
+        todos: []
 
     }
 
 
-    async componentDidMount(){
+    async componentDidMount() {
 
-    this.setState({ isLoading : false})
+        this.setState({ isLoading: false })
 
-     const response = await fetch('https://jsonplaceholder.typicode.com/todos');
-     
-     const todo = await response.json();
+        const response = await fetch('https://jsonplaceholder.typicode.com/todos/1');
 
-     this.setState({ todo , isLoading : true})
+        const todo = await response.json();
+
+        this.setState({ todo, isLoading: true })
 
     }
 
 
-    render(){
+    render() {
 
 
-        const {isLoading , todo} = this.state;
+        const { isLoading, todo } = this.state;
 
 
-      if(!isLoading)
-        return <div>Loading ...</div>
+        if (!isLoading)
+            return <div>Loading ...</div>
 
         return <div>
-        {todo.map( item => {
-
-           return <p>{item.userId} {item.title}</p>
 
 
-        })}
-        
+            return <p>{todo.userId} {todo.title}</p>
+
+
         </div>
 
 
 
     }
-    
+
 }
 
 export default TodoFetch;

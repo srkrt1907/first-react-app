@@ -4,6 +4,8 @@ import TodoForm from './TodoForm'
 import TodoList from './TodoList'
 import TodoFetch from './TodoFetch'
 
+import {withRouter} from 'react-router-dom'
+
 class Todo extends Component {
 
 
@@ -28,6 +30,8 @@ class Todo extends Component {
 
     }
 
+
+
     render() {
 
         return (
@@ -39,6 +43,9 @@ class Todo extends Component {
 
 
                 <TodoFetch />
+
+            <button className="btn btn-success" onClick={() => this.props.history.push('/user')}> User Page</button>
+
             </div>
 
 
@@ -50,5 +57,5 @@ class Todo extends Component {
 
 
 }
-
-export default Todo;
+// this.props.history.push('/user') history withrouter ile geliyor burdaki parametre ile kullanılıyor.
+export default withRouter(Todo);

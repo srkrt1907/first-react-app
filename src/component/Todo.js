@@ -4,6 +4,8 @@ import TodoForm from './TodoForm'
 import TodoList from './TodoList'
 import TodoFetch from './TodoFetch'
 
+import TodoFetchHooks from '../hooks/TodoFetchHooks'
+
 import {withRouter} from 'react-router-dom'
 
 
@@ -30,7 +32,7 @@ class Todo extends Component {
                 <TodoList />
 
 
-                <TodoFetch />
+                <TodoFetchHooks />
 
             <button className="btn btn-success" onClick={() => this.props.history.push('/user')}> User Page</button>
 

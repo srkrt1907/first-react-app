@@ -33,13 +33,7 @@ class TodoFetch extends Component {
         if (!isLoading)
             return <div>Loading ...</div>
 
-        return <div>
-
-
-            return <p>{todo.userId} {todo.title}</p>
-
-
-        </div>
+        return <div><p>{todo.userId} {todo.title}</p> </div>
 
 
 
